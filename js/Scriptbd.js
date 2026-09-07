@@ -562,7 +562,8 @@ async function confirmarAsistencia() {
         );
       } else {
         showMessage(
-          `Hola ${invitado.nombre}, gracias por confirmar 🤎 Has confirmado ${invitado.numero_invitados_confirmados} invitado(s). ¡Te Esperamos!`
+          //`Hola ${invitado.nombre}, gracias por confirmar 🤎 Has confirmado ${invitado.numero_invitados_confirmados} invitado(s). ¡Te Esperamos!`
+           `Hola ${invitado.nombre}, gracias por confirmar 🤎. ¡Te Esperamos!`
         );
       }
 
