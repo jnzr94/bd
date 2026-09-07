@@ -281,7 +281,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       if (CONFIG.mostrarNumeroMesa) {
         showMessage(
-          `Hola ${data.nombre}, gracias por confirmar 🤎 Has confirmado ${confirmados} invitado(s). tu mesa asignada es la número ${numeromesa} ¡Te Esperamos!`
+          //`Hola ${data.nombre}, gracias por confirmar 🤎 Has confirmado ${confirmados} invitado(s). tu mesa asignada es la número ${numeromesa} ¡Te Esperamos!`
+          `Hola ${data.nombre}, gracias por confirmar 🤎. ¡Te Esperamos!`
+       
         );
       } else {
         showMessage(
@@ -508,7 +510,8 @@ async function confirmarAsistencia() {
 
       if (CONFIG.mostrarNumeroMesa && numMesa) {
         await mostrarModalMensaje(
-          `🎉 Gracias por confirmar tu asistencia 🤎. Has confirmado ${cantidadConfirmada} invitado(s), tu mesa asignada es la número ${datosMuestra.numero_mesa} ¡Te Esperamos!`
+          //`🎉 Gracias por confirmar tu asistencia 🤎. Has confirmado ${cantidadConfirmada} invitado(s), tu mesa asignada es la número ${datosMuestra.numero_mesa} ¡Te Esperamos!`
+        `🎉 Gracias por confirmar tu asistencia 🤎. ¡Te Esperamos!`
         );
       } else {
         await mostrarModalMensaje(
@@ -558,7 +561,9 @@ async function confirmarAsistencia() {
 
       if (CONFIG.mostrarNumeroMesa && numMesa) {
         showMessage(
-          `Hola ${invitado.nombre}, gracias por confirmar 🤎 Has confirmado ${invitado.numero_invitados_confirmados} invitado(s). tu mesa asignada es la número ${invitado.numero_mesa} ¡Te Esperamos!`
+          //`Hola ${invitado.nombre}, gracias por confirmar 🤎 Has confirmado ${invitado.numero_invitados_confirmados} invitado(s). tu mesa asignada es la número ${invitado.numero_mesa} ¡Te Esperamos!`
+        `Hola ${invitado.nombre}, gracias por confirmar 🤎. ¡Te Esperamos!`
+        
         );
       } else {
         showMessage(
