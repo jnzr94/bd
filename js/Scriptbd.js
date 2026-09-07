@@ -513,7 +513,7 @@ async function confirmarAsistencia() {
       } else {
         await mostrarModalMensaje(
           //`🎉 Gracias por confirmar tu asistencia 🤎. Has confirmado ${cantidadConfirmada} invitado(s), ¡Te Esperamos!`
-          `🎉 Gracias por confirmar tu asistencia 🤎., ¡Te Esperamos!`
+          `🎉 Gracias por confirmar tu asistencia 🤎. ¡Te Esperamos!`
         );
       }
 
@@ -626,9 +626,9 @@ async function confirmarAsistencia() {
     btnNo.disabled = true;
     btnNo.style.display = "none";
 
-    showMessage(
+    /*showMessage(
       `Hola ${invitado.nombre}, gracias por confirmar 🤎 Has confirmado ${cantidadConfirmada} invitado(s). ¡Te Esperamos!`
-    );
+    );*/
 
     if (CONFIG.mostrarNumeroMesa && numMesa) {
       await mostrarModalMensaje(
@@ -636,7 +636,8 @@ async function confirmarAsistencia() {
       );
     } else {
       await mostrarModalMensaje(
-        `🎉 Gracias por confirmar tu asistencia 🤎. Has confirmado ${cantidadConfirmada} invitado(s), ¡Te Esperamos!`
+        //`🎉 Gracias por confirmar tu asistencia 🤎. Has confirmado ${cantidadConfirmada} invitado(s), ¡Te Esperamos!`
+        `🎉 Gracias por confirmar tu asistencia 🤎. ¡Te Esperamos!`
       );
     }
 
