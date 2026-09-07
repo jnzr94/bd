@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>💍Boda Vero & Oscar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Nota: para producción, inyecta URL/KEY desde variables de entorno o un endpoint seguro -->
+<meta name="supabase-url" content="https://xapdvqeexykowetnlhge.supabase.co">
+<meta name="supabase-anon-key" content="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhhcGR2cWVleHlrb3dldG5saGdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM5OTk5MjgsImV4cCI6MjA3OTU3NTkyOH0.tynERwGVWQVZSHRoc6ab6hHe34GbxH4O7RcmHnbLmzg">
+<meta property="og:title" content="💍 Boda Veronica & Oscar">
+<meta property="og:description" content="Con mucha alegría queremos invitarte a nuestro gran día. Confirma tu asistencia aquí.">
+<meta property="og:image" content="https://nehemias94.github.io/A-N/td.jpeg">
+<meta property="og:image:secure_url" content="https://nehemias94.github.io/A-N/td.jpeg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://nehemias94.github.io/A-N/bd.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+ <link rel="stylesheet" href="estilobd.css?v=5">
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="page" id="invitacion">
+
+  <!-- 🔄 LOADER INICIAL -->
+  <div id="pageLoader">
+    <div class="loader-spinner"></div>
+    <p>Cargando tu invitación...</p>
+  </div>
+
+ <!-- ================= MODALES ================= -->
+ <!-- Modal Confirmación -->
+<div id="modalConfirmacion" class="modal">
+  <div class="modal-contenido">
+    <p id="modalTexto"></p>
+
+    <div class="modal-botones">
+      <button id="modalCancelar" class="btn-secundario">
+        Cancelar
+      </button>
+
+     <button id="modalAceptar" class="btn-principal">
+      <span id="btnTexto">Confirmar</span>
+      <span id="spinner" class="spinner"></span>
+    </button>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal modalMessage -->
+<div id="modalMessage" class="modal">
+  <div class="modal-contenido">
+    <p id="modalTextoMensaje"></p>
+
+    <div class="modal-botones">
+      <button id="modalCerrarMensaje" class="btn-principal">
+        Cerrar
+      </button>
+    </div>
+  </div>
+</div>
+
+   <!-- Modal modalMessage -->
+<div id="modalMessageError" class="modal">
+  <div class="modal-contenido">
+    <p id="modalTextoMensajeError"></p>
+  </div>
+</div>
+
+
+  <!-- FLORES SUPERIORES -->
+  <svg class="floral-top" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g1" x1="0" x2="1">
+        <stop offset="0" stop-color="#eaf3ee"/>
+        <stop offset="1" stop-color="#d9ebe2"/>
+      </linearGradient>
+      <linearGradient id="gold" x1="0" x2="1">
+        <stop offset="0" stop-color="#d8c1a2"/>
+        <stop offset="1" stop-color="#c8a97e"/>
+      </linearGradient>
+      <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="14" result="b"/>
+      </filter>
+    </defs>
+    <g transform="translate(600,140) scale(1)">
+      <ellipse cx="-180" cy="-10" rx="420" ry="110" fill="url(#g1)" opacity="0.85" filter="url(#blur)"/>
+      <ellipse cx="160" cy="-20" rx="420" ry="120" fill="#f0f7f2" opacity="0.72" filter="url(#blur)"/>
+    </g>
+    <g transform="translate(600,140)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.95">
+      <path d="M-220,20 C-200,0 -140,-30 -80,-20 C-40,-14 10,-4 60,-30" stroke="url(#gold)" stroke-width="10" opacity="0.95"/>
+      <path d="M240,10 C200,0 150,-30 90,-20 C40,-10 -10,0 -60,-2" stroke="url(#gold)" stroke-width="10" opacity="0.95"/>
+    </g>
+  </svg>
+
+  <div class="content">
+
+<!-- ================= CONTENIDO ================= -->
+   
+    <h1>👰🏻Nuestra Boda Veronica &amp; Oscar🤵🏻</h1>
+
+      <div class="divider"></div>
+          <!-- MENSAJE PERSONALIZADO CON NOMBRE -->
+      <p class="note">
+        Hola <span id="nombreInvitado"></span>, Con la bendición de Dios y nuestras familias, queremos que seas parte de este día tan especial en nuestras vidas.
+      </p>
+
+         <!-- 🎀 Número de mesa -->
+      <div id="msjeMesa"
+           style="margin: 18px auto;
+           padding: 14px 20px;
+           background: rgba(63,110,96,0.08);
+           border-radius: 10px;
+           max-width: 360px;
+           width: 100%;
+           font-size: 20px;
+           font-weight: 600;
+           color: var(--verde-dark);
+           text-align: center;
+           box-shadow: 0 4px 10px rgba(44,79,69,0.08);"
+           class="note"
+           aria-hidden="true">
+
+         <span id="numMesa" style="font-style:italic;"></span>
+      </div>
+
+       <!-- 📖 Mensaje versículo -->
+       <div id="mensajeRegalo" aria-hidden="true">
+        <div style="
+          margin: 18px auto;
+          padding: 14px 20px;
+          background: rgba(63,110,96,0.08);
+          border-radius: 10px;
+          max-width: 360px;
+          width: 100%;
+          font-size: 20px;
+          font-weight: 600;
+          color: var(--verde-dark);
+          text-align: center;
+          box-shadow: 0 4px 10px rgba(44,79,69,0.08);
+        ">
+           📖 <span style="font-style:italic;">Eclesiastés 4:9-10: “Más valen dos que uno solo; porque si uno cae, el otro lo levanta.”</span>
+        </div>
+      </div>
+
+          <!-- 📸 Galería de fotos -->
+      <!--<div class="galeria-boda" id="galeriaBoda">
+        <div class="galeria-track" id="galeriaTrack">
+          <div class="galeria-slide">
+            <img src="td.jpeg" alt="Anillos de boda con mascota">
+          </div>
+          <div class="galeria-slide">
+            <img src="foto1.jpg" alt="Veronica y Oscar">
+          </div>
+          <div class="galeria-slide">
+            <img src="foto2.jpg" alt="Veronica y Oscar">
+          </div>
+        </div>
+
+        <button class="galeria-btn galeria-prev" id="galeriaPrev" aria-label="Foto anterior" type="button">‹</button>
+        <button class="galeria-btn galeria-next" id="galeriaNext" aria-label="Foto siguiente" type="button">›</button>
+
+        <div class="galeria-dots" id="galeriaDots"></div>
+      </div>-->
+
+             <!-- 📸 Imagen agregada -->
+      <div class="imagen-boda">
+        <img src="td.jpeg" alt="Anillos de boda con mascota">
+      </div>
+
+        <!-- 🎁 MENSAJE DE REGALO (id corregido: ya no duplica "mensajeRegalo") -->
+      <div id="mensajeSobreRegalo" aria-hidden="true">
+        <div style="
+          margin: 18px auto;
+          padding: 14px 20px;
+          background: rgba(63,110,96,0.08);
+          border-radius: 10px;
+          max-width: 360px;
+          width: 100%;
+          font-size: 20px;
+          font-weight: 600;
+          color: var(--verde-dark);
+          text-align: center;
+          box-shadow: 0 4px 10px rgba(44,79,69,0.08);
+        ">
+          🎁 <span style="font-style:italic;">“El mejor regalo es compartir este momento contigo; si deseas tener un detalle, puede ser en sobre.”</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="info note">
+        <p align="center"><strong>📅 Fecha:</strong> 28 de marzo de 2026</p>
+        <p align="center"><strong>⏰ Hora:</strong> 4:00 p.m.</p>
+        <p align="center"><strong>📍 Lugar:</strong> costado Oriente Parque Balboa Planes de Renderos, Los Planes de Renderos</p>
+     </div>
+
+     <!-- 🗺️ Mini mapa embebido -->
+     <div class="mapa-embebido">
+       <iframe
+         src="https://www.google.com/maps?q=13.6384054,-89.1867603&z=16&output=embed"
+         width="100%"
+         height="220"
+         style="border:0;"
+         allowfullscreen=""
+         loading="lazy"
+         referrerpolicy="no-referrer-when-downgrade"
+         title="Ubicación del evento - Boda Veronica y Oscar">
+       </iframe>
+     </div>
+
+   <div class="divider"></div>
+
+     <div class="map-container">
+      
+        <!-- Google Maps -->
+        <a href="https://www.google.com/maps/place/CASA+VERDE+Eventos+y+Mas...../@13.6384054,-89.1867603,17z/data=!3m1!4b1!4m6!3m5!1s0x8f63315ef1897a8b:0xc77968c289b63391!8m2!3d13.6384054!4d-89.1867603!16s%2Fg%2F11fylnmtxn?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank" class="map-btn">
+          Google Maps 📍
+        </a>
+
+        <!-- Waze -->  
+        <a href="https://waze.com/ul?ll=13.6384054,-89.1867603&navigate=yes" target="_blank" class="map-btn waze">
+          Waze 🚗
+        </a>
+     </div>
+
+   <!-- ================= NUEVA CUENTA REGRESIVA ================= -->
+
+      <div class="divider"></div>
+      
+      <div id="cuentaRegresiva" class="countdown"></div>
+      
+      <div class="divider"></div>
+
+  <!-- ================= INPUT INVITADOS ================= -->
+
+    <!-- INPUT NUMERO DE INVITADOS -->
+    <div id="contenedorInvitados" aria-live="polite">
+      <div id="contadorInvitados" class="note" aria-hidden="true"></div>
+
+      <label class="input-label" for="inputInvitados">¿Cuántos asistirán?</label>
+      <input id="inputInvitados" type="number" min="1" step="1" class="input-box" aria-describedby="contadorInvitados" inputmode="numeric" pattern="[0-9]*" />
+
+    </div>
+
+       <!-- 📅 FECHA LÍMITE CONFIRMACIÓN -->
+    <div id="fechaLimiteConfirmacion">
+      📅 Por favor confirma antes del <strong>15 de marzo de 2026</strong>.
+    </div>
+
+    <!-- Usamos un botón en vez de <a> para accesibilidad -->
+    <button id="btnConfirmar" class="rsvp" type="button">Confirmar asistencia</button>
+
+    <button id="btnNoConfirmar" class="rsvp" type="button">No podre asistir</button>
+   
+    <div id="mensajeConfirmacion" role="status" aria-live="polite"></div>  
+  </div>
+
+    <!-- FOOTER -->
+  <footer>
+    <p><center>Con amor, Veronica &amp; Oscar 🤎</center></p>
+  </footer>
+
+  <!-- FLORES INFERIORES -->
+  <svg class="floral-bottom" viewBox="0 0 1200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g2" x1="0" x2="1">
+        <stop offset="0" stop-color="#eaf3ee"/>
+        <stop offset="1" stop-color="#d9ebe2"/>
+      </linearGradient>
+      <linearGradient id="gold2" x1="0" x2="1">
+        <stop offset="0" stop-color="#d6c0a3"/>
+        <stop offset="1" stop-color="#b89163"/>
+      </linearGradient>
+      <filter id="blur2" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="12" result="b"/>
+      </filter>
+    </defs>
+    <g transform="translate(600,110)">
+      <ellipse cx="-160" cy="10" rx="380" ry="80" fill="url(#g2)" opacity="0.9" filter="url(#blur2)"/>
+      <ellipse cx="180" cy="20" rx="380" ry="90" fill="#f0f7f2" opacity="0.7" filter="url(#blur2)"/>
+    </g>
+  </svg>
+</div>
+ <!-- ================= SCRIPTS ================= -->
+
+<!-- Dependencia Supabase: carga desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="js/Scriptbd.js"></script>
+ <script src="js/Segurity.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/galeria.js"></script>
+</body>
+</html>
