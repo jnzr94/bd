@@ -285,7 +285,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         );
       } else {
         showMessage(
-          `Hola ${data.nombre}, gracias por confirmar 🤎 Has confirmado ${confirmados} invitado(s). ¡Te Esperamos!`
+         // `Hola ${data.nombre}, gracias por confirmar 🤎 Has confirmado ${confirmados} invitado(s). ¡Te Esperamos!`
+            `Hola ${data.nombre}, gracias por confirmar 🤎. ¡Te Esperamos!`
         );
       }
 
@@ -300,7 +301,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       contenedor.style.display = "none";
 
-      showMessage(`Hola ${data.nombre}, gracias por confirmar 🤎 Has confirmado que no asistirás.`);
+      //showMessage(`Hola ${data.nombre}, gracias por confirmar 🤎 Has confirmado que no asistirás.`);
+
+      showMessage(`Hola ${data.nombre}, gracias por confirmar 🤎.`);
 
       btn.disabled = true;
       btn.style.display = "none";
@@ -509,7 +512,8 @@ async function confirmarAsistencia() {
         );
       } else {
         await mostrarModalMensaje(
-          `🎉 Gracias por confirmar tu asistencia 🤎. Has confirmado ${cantidadConfirmada} invitado(s), ¡Te Esperamos!`
+          //`🎉 Gracias por confirmar tu asistencia 🤎. Has confirmado ${cantidadConfirmada} invitado(s), ¡Te Esperamos!`
+          `🎉 Gracias por confirmar tu asistencia 🤎., ¡Te Esperamos!`
         );
       }
 
