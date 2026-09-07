@@ -502,9 +502,9 @@ async function confirmarAsistencia() {
       btnNo.disabled = true;
       btnNo.style.display = "none";
 
-      showMessage(
+      /*showMessage(
         `Hola ${datosMuestra.nombre}, gracias por confirmar 🤎 Has confirmado ${cantidadConfirmada} invitado(s). ¡Te Esperamos!`
-      );
+      );*/
 
       if (CONFIG.mostrarNumeroMesa && numMesa) {
         await mostrarModalMensaje(
