@@ -22,7 +22,7 @@
 11 = diciembre
 */
 
-const fechaEvento = new Date(2026, 9, 28, 7, 0, 0).getTime();
+const fechaEvento = new Date(2026, 9, 28, 4, 30, 0).getTime();
 
 // Elemento donde se mostrará
 const countdownEl = document.getElementById("cuentaRegresiva");
