@@ -282,13 +282,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (CONFIG.mostrarNumeroMesa) {
         showMessage(
           //`Hola ${data.nombre}, gracias por confirmar 🤎 Has confirmado ${confirmados} invitado(s). tu mesa asignada es la número ${numeromesa} ¡Te Esperamos!`
-          `Hola ${data.nombre}, gracias por confirmar 🤎. ¡Te Esperamos!`
+          //`Hola ${data.nombre}, gracias por confirmar 🤎. ¡Te Esperamos!`
+          `🎉 ¡Gracias por confirmar tu asistencia! 🤎 Has confirmado la asistencia de ${confirmados} invitado(s). No olvides vestir casual o formal. ✨ ¡Te esperamos! 🥰`
        
         );
       } else {
         showMessage(
          // `Hola ${data.nombre}, gracias por confirmar 🤎 Has confirmado ${confirmados} invitado(s). ¡Te Esperamos!`
-            `Hola ${data.nombre}, gracias por confirmar 🤎. ¡Te Esperamos!`
+          //  `Hola ${data.nombre}, gracias por confirmar 🤎. ¡Te Esperamos!`
+          `🎉 ¡Gracias por confirmar tu asistencia! 🤎 Has confirmado la asistencia de ${confirmados} invitado(s). No olvides vestir casual o formal. ✨ ¡Te esperamos! 🥰`
         );
       }
 
